@@ -1,10 +1,19 @@
 // script.js
 
-// O script agora só vai lidar com o formulário de inscrição simulado,
-// sem interferir na navegação do menu, que é tratada pelo HTML e CSS.
-
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Lógica para o menu de hambúrguer
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.getElementById('site-nav');
+
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            siteNav.classList.toggle('active');
+        });
+    }
+
+    // Lógica para o formulário de inscrição
     const inscricaoForm = document.getElementById('inscricaoForm');
     const areaFormulario = document.getElementById('formulario-cadastro');
     const areaPagamento = document.getElementById('area-pagamento');
@@ -28,5 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.finalizarInscricao = finalizarInscricao;
-
 });

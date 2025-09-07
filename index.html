@@ -15,22 +15,84 @@
                 <img src="./img/logo-alquim.png" class="logo-img">
                 <span class="logo-text">Alquim</span>
             </div>
-            <nav>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav id="site-nav">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="cursos.html#curso" class="nav-link">Cursos</a></li>
-                    <li><a href="cursos.html#produtos" class="nav-link">Catálogo</a></li>
-                    <li><a href="cursos.html#contato" class="nav-link">Contato</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#cursos" class="nav-link">Cursos</a></li>
+                    <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <section class="hero-desktop">
+        <section id="home" class="hero-desktop page-section">
             <div class="container hero-content">
                 <h1>Desperte a Magia Interior</h1>
                 <p>Nossa jornada é a busca pelo sagrado. Conecte-se com seu propósito e transforme sua vida através do autoconhecimento.</p>
-                <a href="cursos.html" class="btn btn-primary">Conheça Nossos Cursos</a>
+                <a href="#cursos" class="btn btn-primary">Conheça Nossos Cursos</a>
+            </div>
+        </section>
+        
+        <section id="cursos" class="page-section">
+            <div class="container">
+                <h2>Conheça Nossos Cursos</h2>
+                <div class="course-details">
+                    <h3>"O Poder dos Rituais: Uma Jornada de Autoconhecimento"</h3>
+                    <p>Este curso foi criado para guiar você em uma jornada mágica e profunda. Aprenda a canalizar energias, criar rituais de proteção, prosperidade e cura, e conectar-se com o sagrado em seu dia a dia. Desvende o poder dos elementos, ervas e cristais para manifestar seus desejos e transformar sua realidade. Seja o alquimista da sua própria vida!</p>
+                    <h4>O que você vai aprender:</h4>
+                    <ul>
+                        <li>- **Módulo 1:** Fundamentos da Magia e a Roda do Ano.</li>
+                        <li>- **Módulo 2:** Rituais de Limpeza e Proteção Energética.</li>
+                        <li>- **Módulo 3:** O Uso de Ervas, Cristais e Velas.</li>
+                        <li>- **Módulo 4:** Rituais de Prosperidade e Abundância.</li>
+                        <li>- **Módulo 5:** Conexão com a Natureza e o Sagrado Feminino/Masculino.</li>
+                        <li>- **Módulo 6:** Manifestação e Criação de Rituais Pessoais.</li>
+                    </ul>
+                    <a href="inscricao.html" class="btn btn-secondary">Quero me inscrever agora!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="page-section">
+            <div class="container">
+                <h2>Nosso Catálogo Místico</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="tarot.jpg" alt="Jogo de Tarô Fictício">
+                        <h3>Leitura de Tarô: O Mapa da Alma</h3>
+                        <p>Receba uma consulta personalizada com o oráculo mais antigo. Desvende os mistérios do seu passado, presente e futuro para tomar decisões com clareza e confiança. <br> <strong>Preço: R$ 120,00</strong></p>
+                        <a href="catalogo-tarot.html" class="btn btn-tertiary">Saber Mais</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="runas.jpg" alt="Jogo de Runas Fictício">
+                        <h3>Oráculo de Runas: A Voz dos Antigos</h3>
+                        <p>As runas são símbolos ancestrais que guardam a sabedoria nórdica. Receba um conselho direto e poderoso sobre seus desafios e caminhos, guiando seu espírito em cada passo da jornada. <br> <strong>Preço: R$ 85,00</strong></p>
+                        <a href="catalogo-runas.html" class="btn btn-tertiary">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contato" class="page-section">
+            <div class="container contact-container">
+                <h2>Vamos Conectar!</h2>
+                <p>Use os links abaixo para entrar em contato ou siga-nos nas redes sociais para ficar por dentro das novidades.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/559999999999" target="_blank" class="contact-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="contact-text">WhatsApp</span>
+                    </a>
+                    <a href="https://instagram.com/seuperfil" target="_blank" class="contact-link">
+                        <i class="fab fa-instagram"></i>
+                        <span class="contact-text">Instagram</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
