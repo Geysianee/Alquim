@@ -5,29 +5,27 @@
 // ----------------------------------------------------
 const navLinks = document.querySelectorAll('.nav-link');
 const pageSections = document.querySelectorAll('.page-section');
-const header = document.getElementById('main-header');
+const mainHeader = document.getElementById('main-header');
 
 // Função para mostrar a seção correta e esconder as outras
 function showSection(targetId) {
     // Esconde todas as seções
     pageSections.forEach(section => {
         section.classList.remove('active');
-        section.classList.add('hidden');
     });
 
     // Mostra a seção de destino
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
-        targetSection.classList.remove('hidden');
         targetSection.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo da página
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Esconde ou mostra o cabeçalho com base na seção
     if (targetId === 'home') {
-        header.classList.remove('header-hidden');
+        mainHeader.classList.remove('menu-hidden');
     } else {
-        header.classList.add('header-hidden');
+        mainHeader.classList.add('menu-hidden');
     }
 }
 

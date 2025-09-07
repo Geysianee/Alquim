@@ -206,7 +206,7 @@ section:nth-child(even) {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: calc(100vh - 100px); /* Altura da tela menos o cabeçalho e rodapé */
+    min-height: calc(100vh - 100px);
 }
 
 /* Sobre Mim */
@@ -366,10 +366,13 @@ section:nth-child(even) {
     animation: fadeIn 0.8s ease-in-out;
 }
 
-.header-hidden {
-    display: none;
+.menu-hidden {
     opacity: 0;
     visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 /* Animação de fade-in para a transição */
