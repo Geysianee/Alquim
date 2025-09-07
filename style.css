@@ -302,13 +302,6 @@ section:nth-child(even) {
     margin-bottom: 20px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #666;
-}
-
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"] {
@@ -400,23 +393,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    /* Esconde a navegação principal no celular */
+    /* Mostra a navegação principal no celular */
     .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        border-top: 1px solid #ddd;
-        padding: 20px 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-
-    /* Estiliza o menu quando ele estiver visível */
-    .main-nav.active {
         display: block;
+        width: 100%;
+    }
+    
+    /* Esconde o botão de hambúrguer */
+    .menu-toggle {
+        display: none;
     }
 
     /* Faz a lista de menu ficar na vertical */
@@ -424,6 +409,7 @@ footer p {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        padding-top: 20px;
     }
 
     /* Estiliza os links do menu para telas menores */
@@ -433,38 +419,5 @@ footer p {
         color: #6b4226;
     }
 
-    /* Mostra o botão de hambúrguer */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .menu-toggle span {
-        display: block;
-        height: 2px;
-        width: 100%;
-        background-color: #6b4226;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-    }
-
-    /* Efeito de rotação do "X" quando o menu está ativo */
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
     .logo-img { height: 30px; }
 }
