@@ -190,12 +190,14 @@ nav ul {
     display: flex;
     gap: 25px;
     justify-content: flex-end;
+    align-items: center; /* Alinha verticalmente os links */
 }
 
 nav ul li a {
     font-weight: 500;
     font-size: 1.1em;
     color: #555;
+    white-space: nowrap; /* Impede a quebra de linha dos links */
 }
 
 nav ul li a:hover {
@@ -206,6 +208,52 @@ nav ul li a:hover {
 .page-section {
     padding: 60px 0;
     background-color: #a58b68;
+}
+
+/* Hero Section (Apenas para a Home) */
+.hero-desktop {
+    background: linear-gradient(rgba(107, 66, 38, 0.541), rgba(220, 220, 220, 0.95)), url('imagem-fundo-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+}
+.hero-desktop h1 {
+    font-size: 4.5em;
+    margin-bottom: 15px;
+    color: #6b4226;
+    text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
+}
+.hero-desktop p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #666;
+}
+.hero-content {
+    margin-bottom: 40px;
+}
+
+/* Curso */
+#curso .course-details {
+    background-color: #fdf8f2;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #e5d5b3;
+}
+
+#curso h3 {
+    color: #6b4226;
+    text-align: center;
+}
+
+#curso ul li::before {
+    content: '✨';
+    color: #d4af37;
 }
 
 /* Produtos */
@@ -513,7 +561,7 @@ footer p {
     }
 }
 
-/* Fixa o menu vertical em celulares */
+/* Força o menu vertical em celulares */
 @media (max-width: 767px) {
     nav ul {
         flex-direction: column;
