@@ -11,21 +11,39 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="./img/logo original-Photoroom.png" class="logo-img">
+                <img src="./img/logo original-Photoroom.png"class="logo-img">
                 <span class="logo-text">Alquim</span>
             </div>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
-                    <li><a href="#" class="nav-link" data-target="sobre">Sobre Mim</a></li>
-                    <li><a href="#" class="nav-link" data-target="curso">O Curso</a></li>
-                    <li><a href="#" class="nav-link" data-target="produtos">Outros Produtos</a></li>
-                    <li><a href="#" class="nav-link" data-target="inscricao">Inscreva-se</a></li>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#curso">O Curso</a></li>
+                    <li><a href="#produtos">Outros Produtos</a></li>
+                    <li><a href="#inscricao">Inscreva-se</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="sobre" class="page-section active">
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Desperte sua Bruxaria Interior</h1>
+                <p>Explore os mistérios da espiritualidade e transforme sua vida com nossos cursos.</p>
+                <a href="#inscricao" class="btn btn-primary">Quero me inscrever!</a>
+            </div>
+            <div class="hero-image">
+                <img src="imagem-bruxaria.jpg" alt="Bruxaria e Espiritualidade">
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
         <div class="container">
             <h2>Sobre Mim</h2>
             <div class="about-content">
@@ -35,7 +53,7 @@
         </div>
     </section>
 
-    <section id="curso" class="page-section hidden">
+    <section id="curso">
         <div class="container">
             <h2>Conheça o Curso</h2>
             <div class="course-details">
@@ -47,12 +65,12 @@
                     <li>- [Benefício 2]</li>
                     <li>- [Benefício 3]</li>
                 </ul>
-                <a href="#" class="btn btn-secondary nav-link" data-target="inscricao">Quero me inscrever agora!</a>
+                <a href="#inscricao" class="btn btn-secondary">Quero me inscrever agora!</a>
             </div>
         </div>
     </section>
 
-    <section id="produtos" class="page-section hidden">
+    <section id="produtos">
         <div class="container">
             <h2>Outros Produtos e Cursos</h2>
             <div class="product-grid">
@@ -72,7 +90,7 @@
         </div>
     </section>
 
-    <section id="inscricao" class="page-section hidden">
+    <section id="inscricao">
         <div class="container">
             <h2>Faça sua Inscrição</h2>
             <p>Preencha o formulário abaixo para garantir sua vaga e prossiga para o pagamento.</p>
@@ -101,7 +119,7 @@
                 <div class="payment-options">
                     <button class="btn btn-payment" onclick="finalizarInscricao('cartao')">Pagar com Cartão de Crédito</button>
                     <button class="btn btn-payment" onclick="finalizarInscricao('boleto')">Pagar com Boleto</button>
-                    <button class="btn btn-payment" onclick="finalizarInscricao('pix')">Pagar com Pix</button>
+                    <button class="btn class="btn-payment" onclick="finalizarInscricao('pix')">Pagar com Pix</button>
                 </div>
                 <p class="payment-info">Após a confirmação do pagamento, você receberá os detalhes de acesso ao curso por email.</p>
             </div>
@@ -110,7 +128,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Alquim. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Minha Marca. Todos os direitos reservados.</p>
         </div>
     </footer>
 

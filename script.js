@@ -1,39 +1,30 @@
 // script.js
 
 // ----------------------------------------------------
-// Novo: Controle de Exibição das Páginas
+// Novo: Controle do Menu Responsivo
 // ----------------------------------------------------
-const navLinks = document.querySelectorAll('.nav-link');
-const pageSections = document.querySelectorAll('.page-section');
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
 
-// Função para mostrar a seção correta e esconder as outras
-function showSection(targetId) {
-    // Esconde todas as seções
-    pageSections.forEach(section => {
-        section.classList.remove('active');
-        section.classList.add('hidden');
-    });
-
-    // Mostra a seção de destino
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-        targetSection.classList.remove('hidden');
-        targetSection.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo da página
-    }
-}
-
-// Oculta todas as seções ao carregar, exceto a de 'Sobre Mim'
-document.addEventListener('DOMContentLoaded', () => {
-    showSection('sobre');
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
 });
 
-// Adiciona o event listener a todos os links de navegação
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+// ----------------------------------------------------
+// Navegação suave para links de âncora
+// ----------------------------------------------------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('data-target');
-        showSection(targetId);
+
+        // Fecha o menu móvel ao clicar em um link
+        nav.classList.remove('active');
+        menuToggle.classList.remove('active');
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
@@ -49,6 +40,7 @@ const areaPagamento = document.getElementById('area-pagamento');
 if (inscricaoForm) {
     inscricaoForm.addEventListener('submit', function(e) {
         e.preventDefault();
+
         areaFormulario.classList.add('hidden');
         areaPagamento.classList.remove('hidden');
     });
@@ -57,11 +49,19 @@ if (inscricaoForm) {
 // Função para finalizar a inscrição (simulada)
 function finalizarInscricao(formaPagamento) {
     alert(`Inscrição realizada com sucesso via ${formaPagamento}! Em breve você receberá os detalhes por email. Agradecemos sua confiança!`);
-    // Opcional: Voltar para a página inicial após 3 segundos
-    setTimeout(() => {
-        location.reload(); // Recarrega a página para voltar ao estado inicial
-    }, 3000);
 }
+
+// Script para o efeito de scroll no header (removido para manter a cor sólida)
+/*
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(212, 175, 55, 0.9)'; // Dourado translúcido
+    } else {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)'; // Branco translúcido
+    }
+});
+*/
 
 // Torna a função `finalizarInscricao` globalmente acessível
 window.finalizarInscricao = finalizarInscricao;
