@@ -367,12 +367,7 @@ section:nth-child(even) {
 }
 
 .menu-hidden {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
+    display: none;
 }
 
 /* Animação de fade-in para a transição */
