@@ -10,7 +10,6 @@ body {
     color: #333;
     line-height: 1.6;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
 }
 
 .container {
@@ -144,12 +143,8 @@ ul li::before {
 
 /* Header */
 header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #fdf8f2;
     padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -170,7 +165,7 @@ header .container {
 }
 
 .logo-img {
-    height:200px;
+    height: 200px;
     width: auto;
     object-fit: contain;
 }
@@ -192,43 +187,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #c4ac5c;
-}
-
-/* Hero Section */
-#hero {
-    background: linear-gradient(rgba(144, 98, 20, 0.541), rgba(255, 255, 255, 0.95)), url('imagem-fundo-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #333;
-}
-
-#hero .hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-#hero h1 {
-    font-size: 4.5em;
-    margin-bottom: 15px;
-    color: #6b4226;
-    text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
-}
-
-#hero p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    color: #666;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* Seções Gerais */
@@ -391,6 +349,28 @@ section:nth-child(even) {
     display: none;
 }
 
+/* Classes para controle de visibilidade */
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animação de fade-in para a transição */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Footer */
 footer {
     background-color: #fdf8f2;
@@ -420,40 +400,40 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    /* Esconde a navegação principal por padrão */
-    header nav {
+    /* Esconde a navegação principal no celular */
+    .main-nav {
+        display: none;
         position: absolute;
-        top: 100%; /* Posiciona abaixo do header */
+        top: 100%;
         left: 0;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.95);
         border-top: 1px solid #ddd;
-        display: none; /* Esconde a nav inteira */
         padding: 20px 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         z-index: 999;
     }
 
     /* Estiliza o menu quando ele estiver visível */
-    header nav.active {
+    .main-nav.active {
         display: block;
     }
 
     /* Faz a lista de menu ficar na vertical */
-    nav ul {
+    .main-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
 
     /* Estiliza os links do menu para telas menores */
-    nav ul li a {
+    .main-nav ul li a {
         font-size: 1.2em;
         font-weight: 600;
         color: #6b4226;
     }
 
-    /* Estilo do botão de hambúrguer */
+    /* Mostra o botão de hambúrguer */
     .menu-toggle {
         display: flex;
         flex-direction: column;
