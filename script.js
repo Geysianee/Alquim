@@ -6,45 +6,39 @@
 const navLinks = document.querySelectorAll('.nav-link');
 const pageSections = document.querySelectorAll('.page-section');
 const mainHeader = document.getElementById('main-header');
-const nav = document.getElementById('main-nav');
-const logo = document.querySelector('.logo');
 
 
-// Função para mostrar a seção correta e esconder as outras
+// Função para mostrar a seção correta e gerenciar o menu
 function showSection(targetId) {
     // Esconde todas as seções de conteúdo
     pageSections.forEach(section => {
         section.classList.remove('active');
+        section.classList.add('hidden');
     });
 
-    // Mostra a seção de destino
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-        targetSection.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Gerencia a visibilidade do cabeçalho
+    if (targetId === 'home') {
+        // Na Home, mostra o cabeçalho no estilo lista e esconde as seções
+        mainHeader.classList.remove('header-hidden');
+        mainHeader.classList.add('home-active-style');
+    } else {
+        // Nas outras páginas, esconde o cabeçalho e mostra a seção de destino
+        mainHeader.classList.add('header-hidden');
+        mainHeader.classList.remove('home-active-style');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.remove('hidden');
+            targetSection.classList.add('active');
+        }
     }
 
-    // Gerencia a visibilidade e o estilo do menu
-    if (targetId === 'home') {
-        // Na Home, mostra o logo e o menu completo em estilo lista
-        mainHeader.classList.remove('hidden');
-        nav.classList.remove('menu-only-home');
-        mainHeader.classList.add('home-menu-active');
-    } else {
-        // Nas outras páginas, esconde o logo e mostra apenas o link de Home
-        mainHeader.classList.remove('home-menu-active');
-        nav.classList.add('menu-only-home');
-        mainHeader.classList.add('hidden'); // Ajuste para esconder o header completo
-    }
+    // Rola a página para o topo, se necessário
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Oculta todas as seções ao carregar, exceto o menu inicial
+// Oculta todas as seções e mostra o menu inicial ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    // Oculta todas as seções ao carregar
-    pageSections.forEach(section => section.classList.add('hidden'));
-
-    // Estiliza o header para a página inicial
-    mainHeader.classList.add('home-menu-active');
+    showSection('home');
 });
 
 // Adiciona o event listener a todos os links de navegação
@@ -52,15 +46,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('data-target');
-        
-        // Se o link clicado for o de 'home', exibe o conteúdo dela
-        if (targetId === 'home') {
-            document.getElementById('home').classList.remove('hidden');
-        } else {
-            // Se for outro link, esconde a seção de 'home' e mostra a seção de destino
-            document.getElementById('home').classList.add('hidden');
-            showSection(targetId);
-        }
+        showSection(targetId);
     });
 });
 
