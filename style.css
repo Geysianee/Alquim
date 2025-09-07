@@ -204,6 +204,34 @@ header .container {
     gap: 10px;
 }
 
+/* Estilos para o menu quando não está na Home */
+.header-hidden {
+    display: none !important;
+}
+
+/* Link "Voltar para Home" */
+.back-link-container {
+    position: absolute;
+    top: 20px; /* Ajuste conforme necessário */
+    left: 20px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: #fdf8f2;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.back-link-container a {
+    font-weight: 500;
+    font-size: 1em;
+    color: #555;
+}
+
+.back-link-container a:hover {
+    color: #c4ac5c;
+}
+
+
 /* Seções de Conteúdo */
 section {
     padding: 60px 0;
@@ -211,11 +239,6 @@ section {
 
 section:nth-child(even) {
     background-color: #fdf8f2;
-}
-
-/* Estilos para o menu quando não está na Home */
-.header-hidden {
-    display: none !important;
 }
 
 /* Classes de controle de visibilidade */
@@ -287,5 +310,9 @@ footer p {
         align-items: center;
         gap: 15px;
         padding-top: 20px;
+    }
+    .back-link-container {
+        top: 15px;
+        left: 15px;
     }
 }

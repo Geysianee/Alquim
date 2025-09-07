@@ -6,9 +6,10 @@
 const navLinks = document.querySelectorAll('.nav-link');
 const pageSections = document.querySelectorAll('.page-section');
 const mainHeader = document.getElementById('main-header');
+const backToHomeLinkContainer = document.querySelectorAll('.back-link-container');
 
 
-// Função para mostrar a seção correta e gerenciar o menu
+// Função para mostrar a seção correta e gerenciar o menu/link de volta
 function showSection(targetId) {
     // Esconde todas as seções de conteúdo
     pageSections.forEach(section => {
@@ -16,19 +17,36 @@ function showSection(targetId) {
         section.classList.add('hidden');
     });
 
-    // Gerencia a visibilidade do cabeçalho
+    // Esconde todos os links de "Voltar para Home" em todas as seções
+    backToHomeLinkContainer.forEach(linkContainer => {
+        linkContainer.classList.add('hidden');
+    });
+
+    // Gerencia a visibilidade do cabeçalho e a exibição da seção de conteúdo
     if (targetId === 'home') {
-        // Na Home, mostra o cabeçalho no estilo lista e esconde as seções
+        // Na Home, mostra o cabeçalho e a sua classe de estilo
         mainHeader.classList.remove('header-hidden');
         mainHeader.classList.add('home-active-style');
+        // Certifica que a seção 'home' (que agora está no header) não é tratada como uma section oculta
+        // Não precisamos fazer nada aqui, pois o 'home' está no header
     } else {
-        // Nas outras páginas, esconde o cabeçalho e mostra a seção de destino
+        // Nas outras páginas:
+        // 1. Esconde o cabeçalho completamente
         mainHeader.classList.add('header-hidden');
         mainHeader.classList.remove('home-active-style');
+
+        // 2. Mostra a seção de destino
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
             targetSection.classList.remove('hidden');
             targetSection.classList.add('active');
+
+            // 3. Mostra o link "Voltar para Home" DENTRO da seção que acabou de aparecer
+            // Precisamos encontrar o .back-link-container específico desta seção
+            const sectionBackLinkContainer = targetSection.querySelector('.back-link-container');
+            if (sectionBackLinkContainer) {
+                sectionBackLinkContainer.classList.remove('hidden');
+            }
         }
     }
 
