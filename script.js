@@ -1,81 +1,68 @@
 // script.js
 
-// ----------------------------------------------------
-// Controle de Exibição das Páginas (SPA)
-// ----------------------------------------------------
-const navLinks = document.querySelectorAll('.nav-link');
-const pageSections = document.querySelectorAll('.page-section');
-const mainHeader = document.getElementById('main-header');
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link[data-target]');
+    const pageSections = document.querySelectorAll('.page-section');
+    const cursoPageLink = document.querySelector('a[href="#curso"]');
 
-// Função para mostrar a seção correta e gerenciar o menu
-function showSection(targetId) {
-    // Esconde todas as seções de conteúdo
-    pageSections.forEach(section => {
-        section.classList.remove('active');
-        section.classList.add('hidden');
-    });
-
-    // Gerencia a visibilidade do cabeçalho
-    if (targetId === 'home') {
-        // Na Home, mostra o cabeçalho e aplica o estilo de Home
-        mainHeader.classList.remove('header-hidden');
-        mainHeader.classList.add('home-active-style');
-    } else {
-        // Nas outras páginas, esconde o cabeçalho completamente
-        mainHeader.classList.add('header-hidden');
-        mainHeader.classList.remove('home-active-style');
-        
-        // Mostra a seção de destino
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.classList.remove('hidden');
-            targetSection.classList.add('active');
-        }
+    // Função para mostrar a seção com o ID correspondente e esconder as outras
+    function showSection(targetId) {
+        pageSections.forEach(section => {
+            if (section.id === targetId) {
+                section.classList.remove('hidden');
+                section.classList.add('active');
+            } else {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            }
+        });
     }
 
-    // Rola a página para o topo, se necessário
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Ao carregar a página, inicializa mostrando a Home
-document.addEventListener('DOMContentLoaded', () => {
-    showSection('home');
-});
-
-// Adiciona o event listener a todos os links de navegação e de "Voltar"
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-target');
-        showSection(targetId);
+    // Adiciona o evento de clique aos links do menu
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-target');
+            showSection(targetId);
+        });
     });
+
+    // Se a página for carregada com a âncora #curso, exibe a seção de curso.
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if (document.getElementById(hash)) {
+            showSection(hash);
+        }
+    } else if (cursoPageLink) {
+        // Por padrão, se não tiver âncora, exibe a seção "Sobre Mim"
+        showSection('sobre');
+    }
+
+    // ----------------------------------------------------
+    // Manutenção das funcionalidades existentes (Formulário)
+    // ----------------------------------------------------
+
+    const inscricaoForm = document.getElementById('inscricaoForm');
+    const areaFormulario = document.getElementById('formulario-cadastro');
+    const areaPagamento = document.getElementById('area-pagamento');
+
+    if (inscricaoForm) {
+        inscricaoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            areaFormulario.classList.add('hidden');
+            areaPagamento.classList.remove('hidden');
+        });
+    }
+
+    // Função para finalizar a inscrição (simulada)
+    function finalizarInscricao(formaPagamento) {
+        alert(`Inscrição realizada com sucesso via ${formaPagamento}! Em breve você receberá os detalhes por email. Agradecemos sua confiança!`);
+        setTimeout(() => {
+            areaPagamento.classList.add('hidden');
+            areaFormulario.classList.remove('hidden');
+            if (inscricaoForm) inscricaoForm.reset();
+        }, 3000);
+    }
+
+    window.finalizarInscricao = finalizarInscricao;
 });
-
-// ----------------------------------------------------
-// Manutenção das funcionalidades existentes
-// ----------------------------------------------------
-
-// Manipulação do formulário de inscrição e pagamento
-const inscricaoForm = document.getElementById('inscricaoForm');
-const areaFormulario = document.getElementById('formulario-cadastro');
-const areaPagamento = document.getElementById('area-pagamento');
-
-if (inscricaoForm) {
-    inscricaoForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        areaFormulario.classList.add('hidden');
-        areaPagamento.classList.remove('hidden');
-    });
-}
-
-// Função para finalizar a inscrição (simulada)
-function finalizarInscricao(formaPagamento) {
-    alert(`Inscrição realizada com sucesso via ${formaPagamento}! Em breve você receberá os detalhes por email. Agradecemos sua confiança!`);
-    // Opcional: Voltar para a página inicial após 3 segundos
-    setTimeout(() => {
-        location.reload(); // Recarrega a página para voltar ao estado inicial
-    }, 3000);
-}
-
-// Torna a função `finalizarInscricao` globalmente acessível
-window.finalizarInscricao = finalizarInscricao;

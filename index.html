@@ -8,121 +8,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="main-header" class="home-active-style">
+    <header>
         <div class="container">
             <div class="logo">
                 <img src="./img/logo original-Photoroom.png" class="logo-img">
                 <span class="logo-text">Alquim</span>
             </div>
-            <div class="home-content">
-                <h2>Bem-vindo(a) à Alquim</h2>
-                <p>Selecione um item no menu para navegar.</p>
-            </div>
-            <nav id="main-nav">
+            <nav>
                 <ul>
-                    <li><a href="#" class="nav-link" data-target="home">Home</a></li>
-                    <li><a href="#" class="nav-link" data-target="sobre">Sobre Mim</a></li>
-                    <li><a href="#" class="nav-link" data-target="curso">O Curso</a></li>
-                    <li><a href="#" class="nav-link" data-target="produtos">Outros Produtos</a></li>
-                    <li><a href="#" class="nav-link" data-target="inscricao">Inscreva-se</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="cursos.html#curso" class="nav-link">Cursos</a></li>
+                    <li><a href="cursos.html#produtos" class="nav-link">Catálogo</a></li>
+                    <li><a href="cursos.html#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="sobre" class="page-section hidden">
-        <div class="container">
-            <a href="#" class="nav-link back-to-home" data-target="home">← Voltar para Home</a>
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <img src="sua-foto.jpg" alt="Sua Foto" class="profile-pic">
-                <p>Olá! Sou [Seu Nome], apaixonada por desvendar os caminhos da bruxaria e da espiritualidade. Com [X anos] de experiência, dedico-me a compartilhar saberes ancestrais e práticos para quem busca autoconhecimento, poder pessoal e conexão com o universo. Meus cursos são [breve descrição sobre sua metodologia ou diferencial].</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="curso" class="page-section hidden">
-        <div class="container">
-            <a href="#" class="nav-link back-to-home" data-target="home">← Voltar para Home</a>
-            <h2>Conheça o Curso</h2>
-            <div class="course-details">
-                <h3>[Nome do Curso Específico]</h3>
-                <p>[Descrição detalhada do curso: o que o aluno aprenderá, objetivos, público-alvo, formato (aulas ao vivo/gravadas), duração, etc.]</p>
-                <h4>O que você vai conquistar:</h4>
-                <ul>
-                    <li>- [Benefício 1]</li>
-                    <li>- [Benefício 2]</li>
-                    <li>- [Benefício 3]</li>
-                </ul>
-                <a href="#" class="btn btn-secondary nav-link" data-target="inscricao">Quero me inscrever agora!</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="produtos" class="page-section hidden">
-        <div class="container">
-            <a href="#" class="nav-link back-to-home" data-target="home">← Voltar para Home</a>
-            <h2>Outros Produtos e Cursos</h2>
-            <div class="product-grid">
-                <div class="product-item">
-                    <img src="produto-1.jpg" alt="Produto 1">
-                    <h3>[Nome do Produto 1]</h3>
-                    <p>[Breve descrição]</p>
-                    <a href="[Link para o produto 1]" class="btn btn-tertiary">Saber Mais</a>
-                </div>
-                <div class="product-item">
-                    <img src="produto-2.jpg" alt="Produto 2">
-                    <h3>[Nome do Produto 2]</h3>
-                    <p>[Breve descrição]</p>
-                    <a href="[Link para o produto 2]" class="btn btn-tertiary">Saber Mais</a>
+    <main>
+        <section id="inicio" class="page-section hero-mobile-only hero-desktop">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bem-vindo(a) à Alquim!</h1>
+                    <p>Onde a espiritualidade encontra o autoconhecimento. Explore nossos cursos e produtos.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="inscricao" class="page-section hidden">
-        <div class="container">
-            <a href="#" class="nav-link back-to-home" data-target="home">← Voltar para Home</a>
-            <h2>Faça sua Inscrição</h2>
-            <p>Preencha o formulário abaixo para garantir sua vaga e prossiga para o pagamento.</p>
-            
-            <div id="formulario-cadastro" class="form-section">
-                <h3>Dados para Inscrição</h3>
-                <form id="inscricaoForm">
-                    <div class="form-group">
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone">Telefone (WhatsApp):</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) 9XXXX-XXXX" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Continuar para Pagamento</button>
-                </form>
-            </div>
-
-            <div id="area-pagamento" class="form-section hidden">
-                <h3>Escolha sua Forma de Pagamento</h3>
-                <div class="payment-options">
-                    <button class="btn btn-payment" onclick="finalizarInscricao('cartao')">Pagar com Cartão de Crédito</button>
-                    <button class="btn btn-payment" onclick="finalizarInscricao('boleto')">Pagar com Boleto</button>
-                    <button class="btn btn-payment" onclick="finalizarInscricao('pix')">Pagar com Pix</button>
-                </div>
-                <p class="payment-info">Após a confirmação do pagamento, você receberá os detalhes de acesso ao curso por email.</p>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
+    
     <footer>
         <div class="container">
-            <p>&copy; 2024 Alquim. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Minha Marca. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

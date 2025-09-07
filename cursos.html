@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos e Produtos - Alquim</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./img/logo original-Photoroom.png" class="logo-img">
+                <span class="logo-text">Alquim</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="#curso" class="nav-link" data-target="curso">Cursos</a></li>
+                    <li><a href="#produtos" class="nav-link" data-target="produtos">Catálogo</a></li>
+                    <li><a href="#contato" class="nav-link" data-target="contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="sobre" class="page-section active" data-id="sobre">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <div class="about-content">
+                    <img src="sua-foto.jpg" alt="Sua Foto" class="profile-pic">
+                    <p>Olá! Sou [Seu Nome], apaixonada por desvendar os caminhos da bruxaria e da espiritualidade. Com [X anos] de experiência, dedico-me a compartilhar saberes ancestrais e práticos para quem busca autoconhecimento, poder pessoal e conexão com o universo. Meus cursos são [breve descrição sobre sua metodologia ou diferencial].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="curso" class="page-section hidden" data-id="curso">
+            <div class="container">
+                <h2>Conheça Nossos Cursos</h2>
+                <div class="course-details">
+                    <h3>"O Poder dos Rituais: Uma Jornada de Autoconhecimento"</h3>
+                    <p>Este curso foi criado para guiar você em uma jornada mágica e profunda. Aprenda a canalizar energias, criar rituais de proteção, prosperidade e cura, e conectar-se com o sagrado em seu dia a dia. Desvende o poder dos elementos, ervas e cristais para manifestar seus desejos e transformar sua realidade. Seja o alquimista da sua própria vida!</p>
+                    <h4>O que você vai aprender:</h4>
+                    <ul>
+                        <li>- **Módulo 1:** Fundamentos da Magia e a Roda do Ano.</li>
+                        <li>- **Módulo 2:** Rituais de Limpeza e Proteção Energética.</li>
+                        <li>- **Módulo 3:** O Uso de Ervas, Cristais e Velas.</li>
+                        <li>- **Módulo 4:** Rituais de Prosperidade e Abundância.</li>
+                        <li>- **Módulo 5:** Conexão com a Natureza e o Sagrado Feminino/Masculino.</li>
+                        <li>- **Módulo 6:** Manifestação e Criação de Rituais Pessoais.</li>
+                    </ul>
+                    <a href="inscricao.html" class="btn btn-secondary">Quero me inscrever agora!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="page-section hidden" data-id="produtos">
+            <div class="container">
+                <h2>Nosso Catálogo Místico</h2>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <img src="tarot.jpg" alt="Jogo de Tarô Fictício">
+                        <h3>Leitura de Tarô: O Mapa da Alma</h3>
+                        <p>Receba uma consulta personalizada com o oráculo mais antigo. Desvende os mistérios do seu passado, presente e futuro para tomar decisões com clareza e confiança. <br> <strong>Preço: R$ 120,00</strong></p>
+                        <a href="catalogo-tarot.html" class="btn btn-tertiary">Saber Mais</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="runas.jpg" alt="Jogo de Runas Fictício">
+                        <h3>Oráculo de Runas: A Voz dos Antigos</h3>
+                        <p>As runas são símbolos ancestrais que guardam a sabedoria nórdica. Receba um conselho direto e poderoso sobre seus desafios e caminhos, guiando seu espírito em cada passo da jornada. <br> <strong>Preço: R$ 85,00</strong></p>
+                        <a href="catalogo-runas.html" class="btn btn-tertiary">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contato" class="page-section hidden" data-id="contato">
+            <div class="container contact-container">
+                <h2>Vamos Conectar!</h2>
+                <p>Use os links abaixo para entrar em contato ou siga-nos nas redes sociais para ficar por dentro das novidades.</p>
+                <div class="contact-methods">
+                    <a href="https://wa.me/559999999999" target="_blank" class="contact-link">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="contact-text">WhatsApp</span>
+                    </a>
+                    <a href="https://instagram.com/seuperfil" target="_blank" class="contact-link">
+                        <i class="fab fa-instagram"></i>
+                        <span class="contact-text">Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Minha Marca. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

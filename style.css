@@ -20,7 +20,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
-    color: #6b4226; /* Marrom elegante */
+    color: #6b4226;
     margin-bottom: 15px;
 }
 
@@ -96,7 +96,7 @@ ul li::before {
 }
 
 .btn-primary {
-    background-color: #b48f5f; /* Dourado */
+    background-color: #b48f5f;
     color: #fff;
 }
 
@@ -146,7 +146,9 @@ header {
     background-color: #fdf8f2;
     padding: 15px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: all 0.5s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -166,7 +168,7 @@ header .container {
 }
 
 .logo-img {
-    height: 200px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -175,93 +177,211 @@ header .container {
     color: #6b4226;
 }
 
-/* Estilo para a página Home (header com layout de home) */
-.home-active-style {
+nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #555;
+}
+
+nav ul li a:hover {
+    color: #c4ac5c;
+}
+
+/* Seções Gerais */
+.page-section {
+    padding: 60px 0;
+    background-color: #a58b68;
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+.page-section.hidden {
+    display: none;
+}
+
+/* Hero Section */
+.hero-desktop {
+    background: linear-gradient(rgba(107, 66, 38, 0.541), rgba(220, 220, 220, 0.95)), url('imagem-fundo-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 100vh;
-    padding: 20px;
+    color: #333;
+}
+.hero-desktop h1 {
+    font-size: 4.5em;
+    margin-bottom: 15px;
+    color: #6b4226;
+    text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
+}
+.hero-desktop p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #666;
+}
+.hero-content {
+    margin-bottom: 40px; 
 }
 
-/* Estilos para os elementos DENTRO do header quando na Home */
-.home-active-style .logo,
-.home-active-style .home-content {
+
+/* Sobre Mim */
+#sobre .about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+#sobre p {
+    font-size: 1.15em;
+    max-width: 700px;
+}
+
+/* Curso */
+#curso .course-details {
+    background-color: #fdf8f2;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #e5d5b3;
+}
+
+#curso h3 {
+    color: #6b4226;
+    text-align: center;
+}
+
+#curso ul li::before {
+    content: '✨';
+    color: #d4af37;
+}
+
+/* Produtos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #fdf8f2;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e5d5b3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    color: #6b4226;
+    font-size: 1.5em;
+}
+
+/* Formulários e Pagamento (Novo) */
+.form-section {
+    background-color: #fdf8f2;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 1px solid #e5d5b3;
+}
+
+.form-section h3 {
+    text-align: center;
+    color: #6b4226;
+    margin-bottom: 30px;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-.home-active-style #main-nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.home-active-style .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Link "Voltar para Home" */
-.back-to-home {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-weight: 500;
-    font-size: 1.1em;
-    color: #6b4226;
-    background-color: #fdf8f2;
-    padding: 8px 15px;
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.back-to-home:hover {
-    color: #a67c52;
-}
-
-/* Seções de Conteúdo */
-section {
-    padding: 60px 0;
-}
-
-section:nth-child(even) {
-    background-color: #fdf8f2;
-}
-
-/* Estilos para ocultar elementos */
-.header-hidden {
-    display: none !important;
-}
-
-.page-section {
-    display: none;
-    position: relative; /* Para o link de voltar */
-    min-height: 100vh; /* Ocupa a altura da tela */
-}
-
-.page-section.active {
+.form-group label {
     display: block;
-    animation: fadeIn 0.8s ease-in-out;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
 }
 
-.hidden {
-    display: none;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #e5d5b3;
+    border-radius: 8px;
+    background-color: #fffaf0;
+    color: #333;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-/* Animação de fade-in para a transição */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.form-group input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.form-section button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.payment-options {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-payment {
+    background-color: #fdf8f2;
+    border: 1px solid #d4af37;
+    color: #6b4226;
+    margin: 10px 5px;
+}
+
+.btn-payment:hover {
+    background-color: #d4af37;
+    color: #fff;
+}
+
+.course-price {
+    font-size: 1.3em;
+    text-align: center;
+    color: #6b4226;
+    margin-top: 20px;
 }
 
 /* Footer */
@@ -278,19 +398,121 @@ footer p {
     margin: 0;
 }
 
-/* Media Queries */
-@media (max-width: 992px) {
-    h1 { font-size: 3em; }
-    h2 { font-size: 2em; }
-    .profile-pic { width: 150px; height: 150px; }
-    header .container { flex-direction: column; }
-    nav ul { margin-top: 15px; justify-content: center; }
-    .logo-img { height: 35px; }
+/* -------------------------------------------------- */
+/* Estilos para Contato */
+/* -------------------------------------------------- */
+
+.contact-container {
+    background-color: #fdf8f2;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-@media (max-width: 768px) {
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #b48f5f;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-link i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.contact-link:hover {
+    color: #6b4226;
+    transform: translateY(-5px);
+}
+
+/* -------------------------------------------------- */
+/* Estilos para Páginas de Detalhes (Novo) */
+/* -------------------------------------------------- */
+.product-detail {
+    background-color: #fdf8f2;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-detail-img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px solid #d4af37;
+}
+
+.product-detail p {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.product-detail .price {
+    font-size: 1.8em;
+    margin: 30px 0;
+    color: #6b4226;
+}
+
+.back-btn {
+    margin-top: 20px;
+}
+
+/* -------------------------------------------------- */
+/* Estilos para Desktop */
+/* -------------------------------------------------- */
+@media (min-width: 993px) {
+    .logo-img { height: 200px; }
+    header .container { flex-direction: row; }
+    .product-detail p {
+        text-align: justify;
+    }
+}
+
+/* -------------------------------------------------- */
+/* Estilos para Mobile e Tablets */
+/* -------------------------------------------------- */
+@media (max-width: 992px) {
+    .logo-img { height: 35px; }
+    header .container { flex-direction: column; }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    nav ul li a { font-size: 0.95em; }
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    .hero-desktop h1 { font-size: 3.5em; }
+    .hero-desktop p { font-size: 1.2em; }
+    .profile-pic { width: 150px; height: 150px; }
+    #sobre .about-content { flex-direction: column; text-align: center; }
+    .profile-pic { margin-bottom: 20px; }
     .btn { padding: 10px 20px; font-size: 0.9em; }
     .form-group input { width: calc(100% - 20px); }
     .payment-options { flex-direction: column; }
+    .contact-link { font-size: 0.9em; }
+    .contact-link i { font-size: 2em; }
+}
+
+@media (max-width: 768px) {
     .logo-img { height: 30px; }
+    .hero-desktop h1 { font-size: 2.5em; }
+    .hero-desktop p { font-size: 1em; }
 }
