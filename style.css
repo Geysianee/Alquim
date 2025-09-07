@@ -208,76 +208,6 @@ nav ul li a:hover {
     background-color: #a58b68;
 }
 
-
-/* Hero Section */
-.hero-desktop {
-    background: linear-gradient(rgba(107, 66, 38, 0.541), rgba(220, 220, 220, 0.95)), url('imagem-fundo-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #333;
-}
-.hero-desktop h1 {
-    font-size: 4.5em;
-    margin-bottom: 15px;
-    color: #6b4226;
-    text-shadow: 1px 1px 6px rgba(255,255,255,0.8);
-}
-.hero-desktop p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    color: #666;
-}
-.hero-content {
-    margin-bottom: 40px;
-}
-
-
-/* Sobre Mim */
-#sobre .about-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    text-align: left;
-}
-
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #d4af37;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-#sobre p {
-    font-size: 1.15em;
-    max-width: 700px;
-}
-
-/* Curso */
-#curso .course-details {
-    background-color: #fdf8f2;
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid #e5d5b3;
-}
-
-#curso h3 {
-    color: #6b4226;
-    text-align: center;
-}
-
-#curso ul li::before {
-    content: '✨';
-    color: #d4af37;
-}
-
 /* Produtos */
 .product-grid {
     display: grid;
@@ -483,16 +413,9 @@ footer p {
 /* Ajustes de Responsividade */
 /* -------------------------------------------------- */
 
-/* Header - Ajustes para Desktop e Mobile */
-@media (min-width: 768px) { /* Estilos para telas maiores (desktop e tablets) */
-    nav ul {
-        flex-direction: row; /* Menu horizontal em desktop */
-        gap: 25px;
-        justify-content: flex-end;
-    }
-}
-
-@media (max-width: 767px) { /* Estilos para telas menores (celulares) */
+/* Tablet e Mobile (até 992px) */
+@media (max-width: 992px) {
+    /* Header */
     header .container {
         flex-direction: column;
         text-align: center;
@@ -509,44 +432,23 @@ footer p {
         text-align: center;
     }
     nav ul {
-        flex-direction: column; /* Menu vertical em mobile */
-        gap: 10px;
-        margin-top: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
         padding: 0;
     }
     nav ul li a {
-        font-size: 1.1em;
-        width: 100%;
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(107, 66, 38, 0.2);
-    }
-    nav ul li:last-child a {
-        border-bottom: none;
+        font-size: 1em;
+        padding: 5px 10px;
     }
 
-    /* Seções Gerais - Ajustes para Mobile */
+    /* Seções Gerais */
     h1 { font-size: 2.8em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.5em; }
     p { font-size: 1em; }
 
-    /* Hero - Ajustes para Mobile */
-    .hero-desktop h1 { font-size: 3em; }
-    .hero-desktop p { font-size: 1.1em; }
-
-    /* Sobre Mim - Ajustes para Mobile */
-    #sobre .about-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-
-    /* Produtos (Catálogo) - Ajustes para Mobile */
+    /* Produtos (Catálogo) */
     .product-grid {
         grid-template-columns: 1fr;
     }
@@ -557,7 +459,7 @@ footer p {
         height: 150px;
     }
 
-    /* Formulários (Inscrição) - Ajustes para Mobile */
+    /* Formulários (Inscrição) */
     .form-section {
         padding: 30px 20px;
     }
@@ -576,7 +478,7 @@ footer p {
         max-width: 300px;
     }
 
-    /* Detalhes do Produto - Ajustes para Mobile */
+    /* Detalhes do Produto */
     .product-detail {
         padding: 30px 20px;
     }
@@ -596,7 +498,7 @@ footer p {
         max-width: 300px;
     }
 
-    /* Contato - Ajustes para Mobile */
+    /* Contato */
     .contact-methods {
         flex-direction: column;
         gap: 20px;
@@ -608,6 +510,26 @@ footer p {
         padding: 10px;
         border: 1px solid #d4af37;
         border-radius: 10px;
+    }
+}
+
+/* Fixa o menu vertical em celulares */
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0;
+    }
+    nav ul li a {
+        font-size: 1.1em;
+        width: 100%;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(107, 66, 38, 0.2);
+    }
+    nav ul li:last-child a {
+        border-bottom: none;
     }
 }
 
@@ -623,9 +545,6 @@ footer p {
     h2 { font-size: 1.7em; }
     h3 { font-size: 1.3em; }
     p { font-size: 0.95em; }
-
-    .hero-desktop h1 { font-size: 2.5em; }
-    .hero-desktop p { font-size: 1em; }
 
     .btn {
         padding: 10px 15px;
