@@ -38,23 +38,6 @@ navLinks.forEach(link => {
 });
 
 // ----------------------------------------------------
-// Controle do Menu Responsivo (ajustado para desktop)
-// ----------------------------------------------------
-// No celular, o menu de hambúrguer não é mais necessário.
-// A lógica a seguir é mantida para garantir a funcionalidade no desktop, se necessário.
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-
-// Verifica se o botão do menu existe para evitar erros
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
-}
-
-
-// ----------------------------------------------------
 // Manutenção das funcionalidades existentes
 // ----------------------------------------------------
 

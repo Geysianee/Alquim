@@ -302,6 +302,13 @@ section:nth-child(even) {
     margin-bottom: 20px;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #666;
+}
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"] {
@@ -338,10 +345,6 @@ section:nth-child(even) {
     margin-top: 20px;
 }
 
-.hidden {
-    display: none;
-}
-
 /* Classes para controle de visibilidade */
 .page-section {
     display: none;
@@ -362,6 +365,10 @@ section:nth-child(even) {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.hidden {
+    display: none;
 }
 
 /* Footer */
@@ -393,31 +400,25 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    /* Mostra a navegação principal no celular */
+    .btn { padding: 10px 20px; font-size: 0.9em; }
+    .form-group input { width: calc(100% - 20px); }
+    .payment-options { flex-direction: column; }
+    .logo-img { height: 30px; }
+
+    /* Estilos para o menu em mobile */
     .main-nav {
         display: block;
         width: 100%;
     }
     
-    /* Esconde o botão de hambúrguer */
-    .menu-toggle {
-        display: none;
-    }
-
-    /* Faz a lista de menu ficar na vertical */
     .main-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 15px;
         padding-top: 20px;
     }
-
-    /* Estiliza os links do menu para telas menores */
-    .main-nav ul li a {
-        font-size: 1.2em;
-        font-weight: 600;
-        color: #6b4226;
+    /* Esconde o botão do menu hamburguer */
+    .menu-toggle {
+        display: none;
     }
-
-    .logo-img { height: 30px; }
 }
