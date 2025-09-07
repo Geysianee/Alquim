@@ -396,7 +396,7 @@ footer p {
     nav ul { margin-top: 15px; justify-content: center; }
     #sobre .about-content { flex-direction: column; text-align: center; }
     .profile-pic { margin-bottom: 20px; }
-    .logo-img { height: 35px; } /* logo menor em tablets */
+    .logo-img { height: 35px; }
 }
 
 @media (max-width: 768px) {
@@ -466,5 +466,5 @@ footer p {
         transform: rotate(45deg) translate(-5px, -6px);
     }
     
-    .logo-img { height: 30px; } /* logo ainda menor em celulares */
+    .logo-img { height: 30px; }
 }
