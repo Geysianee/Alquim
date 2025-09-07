@@ -146,6 +146,7 @@ header {
     background-color: #fdf8f2;
     padding: 15px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
 }
 
 header .container {
@@ -196,6 +197,16 @@ section {
 
 section:nth-child(even) {
     background-color: #fdf8f2;
+}
+
+/* Estilos para a seção inicial (home) */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 100px); /* Altura da tela menos o cabeçalho e rodapé */
 }
 
 /* Sobre Mim */
@@ -355,6 +366,12 @@ section:nth-child(even) {
     animation: fadeIn 0.8s ease-in-out;
 }
 
+.header-hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
 /* Animação de fade-in para a transição */
 @keyframes fadeIn {
     from {
@@ -389,8 +406,6 @@ footer p {
 @media (max-width: 992px) {
     h1 { font-size: 3em; }
     h2 { font-size: 2em; }
-    #hero h1 { font-size: 3.5em; }
-    #hero p { font-size: 1.2em; }
     .profile-pic { width: 150px; height: 150px; }
     header .container { flex-direction: column; }
     nav ul { margin-top: 15px; justify-content: center; }
@@ -404,7 +419,7 @@ footer p {
     .form-group input { width: calc(100% - 20px); }
     .payment-options { flex-direction: column; }
     .logo-img { height: 30px; }
-
+    
     /* Estilos para o menu em mobile */
     .main-nav {
         display: block;
@@ -416,9 +431,5 @@ footer p {
         align-items: center;
         gap: 15px;
         padding-top: 20px;
-    }
-    /* Esconde o botão do menu hamburguer */
-    .menu-toggle {
-        display: none;
     }
 }

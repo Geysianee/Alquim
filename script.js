@@ -5,6 +5,7 @@
 // ----------------------------------------------------
 const navLinks = document.querySelectorAll('.nav-link');
 const pageSections = document.querySelectorAll('.page-section');
+const header = document.getElementById('main-header');
 
 // Função para mostrar a seção correta e esconder as outras
 function showSection(targetId) {
@@ -21,11 +22,18 @@ function showSection(targetId) {
         targetSection.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo da página
     }
+
+    // Esconde ou mostra o cabeçalho com base na seção
+    if (targetId === 'home') {
+        header.classList.remove('header-hidden');
+    } else {
+        header.classList.add('header-hidden');
+    }
 }
 
-// Oculta todas as seções ao carregar, exceto a de 'Sobre Mim'
+// Oculta todas as seções ao carregar, exceto a de 'home'
 document.addEventListener('DOMContentLoaded', () => {
-    showSection('sobre');
+    showSection('home');
 });
 
 // Adiciona o event listener a todos os links de navegação

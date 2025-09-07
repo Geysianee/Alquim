@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="container">
             <div class="logo">
                 <img src="./img/logo original-Photoroom.png" class="logo-img">
@@ -16,6 +16,7 @@
             </div>
             <nav class="main-nav">
                 <ul>
+                    <li><a href="#" class="nav-link" data-target="home">Home</a></li>
                     <li><a href="#" class="nav-link" data-target="sobre">Sobre Mim</a></li>
                     <li><a href="#" class="nav-link" data-target="curso">O Curso</a></li>
                     <li><a href="#" class="nav-link" data-target="produtos">Outros Produtos</a></li>
@@ -25,7 +26,14 @@
         </div>
     </header>
 
-    <section id="sobre" class="page-section active">
+    <section id="home" class="page-section active">
+        <div class="container">
+            <h2>Bem-vindo(a) à Alquim</h2>
+            <p>Selecione um item no menu para navegar.</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="page-section hidden">
         <div class="container">
             <h2>Sobre Mim</h2>
             <div class="about-content">
